@@ -1,0 +1,22 @@
+{
+    "name": "joomla/cms-coding-standards",
+    "type": "phpcodesniffer-standard",
+    "description": "Extended Joomla Coding Standards for the Joomla CMS application",
+    "keywords": ["joomla", "coding standards", "phpcs", "php codesniffer"],
+    "homepage": "https://github.com/joomla/cms-coding-standards",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Joomla Coding Standards Contributors",
+            "homepage": "https://github.com/joomla/cms-coding-standards/graphs/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.10"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}
