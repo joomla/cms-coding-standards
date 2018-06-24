@@ -11,12 +11,32 @@
             "homepage": "https://github.com/joomla/cms-coding-standards/graphs/contributors"
         }
     ],
-    "require": {
-        "php": ">=5.3.10"
+    "autoload": {
+       "psr-4": {
+           "Joomla-CMS\\Sniffs\\": "lib/Joomla-CMS/Sniffs"
+       }
     },
+    "require": {
+        "php": ">=5.3.10",
+        "joomla/coding-standards": "~2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8.7"
+    },
+	"suggest" : {
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.4.3 || This Composer plugin will sort out the PHPCS 'installed_paths' automatically."
+    },
+	"support"    : {
+		"issues": "https://github.com/joomla/cms-coding-standards/issues",
+		"source": "https://github.com/joomla/cms-coding-standards"
+	},
     "extra": {
         "branch-alias": {
             "dev-master": "1.x-dev"
         }
+    },
+    "scripts": {
+        "post-install-cmd": "\"vendor/bin/phpcs\" --config-set installed_paths ../../..",
+        "post-update-cmd" : "\"vendor/bin/phpcs\" --config-set installed_paths ../../.."
     }
 }
