@@ -52,10 +52,6 @@
 	<exclude-pattern type="relative">RoboFile.php</exclude-pattern>
 	
 	<!-- Include some additional sniffs from the Generic standard -->
-	<rule ref="Generic.Arrays.DisallowShortArraySyntax">
-		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
-		<exclude-pattern type="relative">tests/codeception/*</exclude-pattern>
-	</rule>
 	<rule ref="Generic.ControlStructures.InlineControlStructure">
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
 		<exclude-pattern type="relative">*/tmpl/*</exclude-pattern>
@@ -428,5 +424,13 @@
 		<exclude name="Joomla.NamingConventions.ValidVariableName.NotCamelCaps"/>
 		<exclude name="Joomla.NamingConventions.ValidVariableName.StringNotCamelCaps"/>
 		<exclude name="Generic.Files.LineEndings.InvalidEOLChar"/>
+		<!-- New for Joomla 4 -->
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
+	</rule>
+	<!-- New for Joomla 4 -->
+	<rule ref="Joomla.Classes.InstantiateNewClasses">
+		<properties>
+			<property name="shortArraySyntax" value="true"/>
+		</properties>
 	</rule>
 </ruleset>
