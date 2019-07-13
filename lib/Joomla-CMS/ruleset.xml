@@ -28,8 +28,6 @@
 	<exclude-pattern type="relative">plugins/editors-xtd/*</exclude-pattern>
 	<exclude-pattern type="relative">plugins/captcha/recaptcha/recaptcha.php</exclude-pattern>
 	<exclude-pattern type="relative">plugins/captcha/recaptcha/recaptchalib.php</exclude-pattern>
-	<exclude-pattern>*/vendor/*</exclude-pattern>
-	<exclude-pattern>*/fof/*</exclude-pattern>
 
 	<!-- Exclude the restore_finalisation until we can deal with nested class definitions -->
 	<exclude-pattern type="relative">administrator/components/com_joomlaupdate/restore_finalisation.php</exclude-pattern>
