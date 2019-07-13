@@ -2,29 +2,28 @@
 <ruleset name="Joomla-CMS">
 	<description>The Joomla CMS coding standard.</description>
 
-    <arg name="report" value="full"/>
-    <arg name="tab-width" value="4"/>
-    <arg name="encoding" value="utf-8"/>
-    <arg value="sp"/>
-    <arg name="colors" />
+	<arg name="report" value="full"/>
+	<arg name="tab-width" value="4"/>
+	<arg name="encoding" value="utf-8"/>
+	<arg value="sp"/>
+	<arg name="colors" />
+	<config name="php_version" value="70200"/>
+	<config name="installed_paths" value="../../joomla/cms-coding-standards/lib,../../joomla/coding-standards"/>
 
 	<!-- Exclude folders not containing production code -->
 	<exclude-pattern type="relative">^build/*</exclude-pattern>
-	<exclude-pattern type="relative">docs/*</exclude-pattern>
 	<exclude-pattern type="relative">cache/*</exclude-pattern>
-	<exclude-pattern type="relative">tmp/*</exclude-pattern>
+	<exclude-pattern type="relative">docs/*</exclude-pattern>
 	<exclude-pattern type="relative">logs/*</exclude-pattern>
+	<exclude-pattern type="relative">media/*</exclude-pattern>
+	<exclude-pattern type="relative">node_modules/*</exclude-pattern>
+	<exclude-pattern type="relative">tmp/*</exclude-pattern>
 
 	<!-- Exclude 3rd party libraries and Framework code. -->
-	<exclude-pattern type="relative">libraries/compat/password/*</exclude-pattern>
-	<exclude-pattern type="relative">libraries/fof/*</exclude-pattern>
-	<exclude-pattern type="relative">libraries/idna_convert/*</exclude-pattern>
 	<exclude-pattern type="relative">libraries/php-encryption/*</exclude-pattern>
-	<exclude-pattern type="relative">libraries/phputf8/*</exclude-pattern>
-	<exclude-pattern type="relative">libraries/simplepie/*</exclude-pattern>
 	<exclude-pattern type="relative">libraries/phpass/*</exclude-pattern>
 	<exclude-pattern type="relative">libraries/vendor/*</exclude-pattern>
-	<exclude-pattern type="relative">libraries/joomla/*</exclude-pattern>
+	<exclude-pattern type="relative">libraries/autoload_psr4.php</exclude-pattern>
 	<exclude-pattern type="relative">plugins/editors/*</exclude-pattern>
 	<exclude-pattern type="relative">plugins/editors-xtd/*</exclude-pattern>
 	<exclude-pattern type="relative">plugins/captcha/recaptcha/recaptcha.php</exclude-pattern>
@@ -37,20 +36,14 @@
 	<exclude-pattern type="relative">administrator/components/com_joomlaupdate/restore.php</exclude-pattern>
 	<exclude-pattern type="relative">configuration.php</exclude-pattern>
 	<exclude-pattern type="relative">installation/template/index.php</exclude-pattern>
-	
-	<!-- Exclude some test related files that don't actually include PHP code -->
-	<exclude-pattern type="relative">tests/unit/suites/libraries/joomla/model/stubs/barbaz.php</exclude-pattern>
-	<exclude-pattern type="relative">tests/unit/suites/libraries/joomla/view/layouts1/fringe/division.php</exclude-pattern>
-	<exclude-pattern type="relative">tests/unit/suites/libraries/joomla/view/layouts1/olivia.php</exclude-pattern>
-	<exclude-pattern type="relative">tests/unit/suites/libraries/joomla/view/layouts1/peter.php</exclude-pattern>
-	<exclude-pattern type="relative">tests/unit/suites/libraries/joomla/view/layouts2/fauxlivia.php</exclude-pattern>
-	<exclude-pattern type="relative">tests/unit/suites/libraries/joomla/view/layouts2/olivia.php</exclude-pattern>
-	<exclude-pattern type="relative">tests/unit/suites/libraries/legacy/controller/stubs/component1/controller.json.php</exclude-pattern>
-	<exclude-pattern type="relative">tests/unit/suites/libraries/legacy/controller/stubs/component2/controller.php</exclude-pattern>
+	<exclude-pattern type="relative">installation/template/error.php</exclude-pattern>
+
+	<!-- Exclude tests completely for now -->
+	<exclude-pattern type="relative">tests/*</exclude-pattern>
 
 	<!-- Exclude the RoboFile.php -->
 	<exclude-pattern type="relative">RoboFile.php</exclude-pattern>
-	
+
 	<!-- Include some additional sniffs from the Generic standard -->
 	<rule ref="Generic.ControlStructures.InlineControlStructure">
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
@@ -68,9 +61,6 @@
 		<exclude-pattern type="relative">templates/*</exclude-pattern>
 		<exclude-pattern type="relative">layouts/*</exclude-pattern>
 		<exclude-pattern type="relative">plugins/system/*</exclude-pattern>
-		<exclude-pattern type="relative">plugins/search/*</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/suites/libraries/cms/*</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/suites/database/driver/*</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Access/Access.php</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Application/*</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Categories/Categories.php</exclude-pattern>
@@ -93,7 +83,6 @@
 		<exclude-pattern type="relative">libraries/src/Table/*</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Document/Renderer/Feed/AtomRenderer.php</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Document/Renderer/Html/HeadRenderer.php</exclude-pattern>
-		<exclude-pattern type="relative">libraries/legacy/*</exclude-pattern>
 		<exclude-pattern type="relative">libraries/cms/html/*</exclude-pattern>
 		<exclude-pattern type="relative">administrator/components/com_users/*</exclude-pattern>
 		<exclude-pattern type="relative">administrator/components/com_redirect/*</exclude-pattern>
@@ -132,9 +121,6 @@
 		<exclude-pattern type="relative">plugins/user/profile/profile.php</exclude-pattern>
 		<exclude-pattern type="relative">plugins/content/pagebreak/pagebreak.php</exclude-pattern>
 		<exclude-pattern type="relative">plugins/authentication/cookie/cookie.php</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/suites/plugins/content/emailcloak/PlgContentEmailcloakTest.php</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/core/case/cache.php</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/core/case/database/sqlsrv.php</exclude-pattern>
 	</rule>
 	<rule ref="Generic.Formatting.DisallowMultipleStatements">
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
@@ -152,7 +138,6 @@
 		<exclude-pattern type="relative">libraries/src/Table/Nested.php</exclude-pattern>
 		<exclude-pattern type="relative">administrator/components/com_modules/models/module.php</exclude-pattern>
 		<exclude-pattern type="relative">modules/mod_tags_popular/helper.php</exclude-pattern>
-		<exclude-pattern type="relative">plugins/search/content/content.php</exclude-pattern>
 		<exclude-pattern type="relative">plugins/system/debug/debug.php</exclude-pattern>
 		<exclude-pattern type="relative">components/com_content/models/articles.php</exclude-pattern>
 		<exclude-pattern type="relative">administrator/modules/mod_menus/models/menus.php</exclude-pattern>
@@ -160,7 +145,6 @@
 		<exclude-pattern type="relative">administrator/components/com_menus/models/menus.php</exclude-pattern>
 		<exclude-pattern type="relative">administrator/components/com_menus/models/items.php</exclude-pattern>
 		<exclude-pattern type="relative">administrator/components/com_associations/models/associations.php</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/suites/libraries/legacy/application/JApplicationTest.php</exclude-pattern>
 	</rule>
 	<rule ref="Generic.WhiteSpace.ScopeIndent">
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
@@ -168,7 +152,7 @@
 		<exclude-pattern type="relative">templates/*</exclude-pattern>
 		<exclude-pattern type="relative">layouts/*</exclude-pattern>
 	</rule>
-	
+
 	<!-- Include some additional sniffs from the PEAR standard -->
 	<rule ref="PEAR.ControlStructures.MultiLineCondition">
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
@@ -200,12 +184,7 @@
 		<exclude-pattern type="relative">libraries/cms/pagination/JPaginationObjectTest.php</exclude-pattern>
 		<exclude-pattern type="relative">modules/mod_articles_category/helper.php</exclude-pattern>
 	</rule>
-	<rule ref="PEAR.NamingConventions.ValidClassName">
-		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
-		<exclude-pattern type="relative">installation/controller/install/database_backup.php</exclude-pattern>
-		<exclude-pattern type="relative">installation/controller/install/database_remove.php</exclude-pattern>
-	</rule>
-	
+
 	<!-- Include some additional sniffs from the Squiz standard -->
 	<rule ref="Squiz.Commenting.BlockComment">
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
@@ -216,16 +195,6 @@
 	</rule>
 	<rule ref="Squiz.Commenting.VariableComment">
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
-		<exclude-pattern type="relative">tests/unit/core/mock/menu.php</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/stubs/bogusload.php</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/stubs/config.wrongclass.php</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/suites/database/driver/mysql/JDatabaseExporterMysqlTest.php</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/suites/libraries/cms/application/stubs/JApplicationCmsInspector.php</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/suites/libraries/cms/component/router/stubs/ComContentRouter.php</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/suites/libraries/cms/html/testfiles/inspector.php</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/suites/libraries/cms/html/TestHelpers/JHtmlSelect-helper-dataset.php</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/suites/libraries/cms/installer/JInstallerAdapterTest.php</exclude-pattern>
-		<exclude-pattern type="relative">tests/unit/suites/libraries/legacy/view/JViewLegacyTest.php</exclude-pattern>
 		<exclude-pattern type="relative">plugins/content/loadmodule/loadmodule.php</exclude-pattern>
 		<exclude-pattern type="relative">plugins/system/debug/debug.php</exclude-pattern>
 		<exclude-pattern type="relative">components/com_users/views/*</exclude-pattern>
@@ -233,9 +202,7 @@
 		<exclude-pattern type="relative">components/com_newsfeeds/helpers/*</exclude-pattern>
 		<exclude-pattern type="relative">components/com_redirect/helpers/*</exclude-pattern>
 		<exclude-pattern type="relative">components/com_redirect/views/*</exclude-pattern>
-		<exclude-pattern type="relative">components/com_search/views/*</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Form/Field/MediaField.php</exclude-pattern>
-		<exclude-pattern type="relative">libraries/src/Menu/Node.php</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/MVC/View/CategoryView.php</exclude-pattern>
 		<exclude-pattern type="relative">administrator/components/com_plugins/*</exclude-pattern>
 		<exclude-pattern type="relative">administrator/components/com_installer/models/database.php</exclude-pattern>
@@ -280,7 +247,6 @@
 		<exclude-pattern type="relative">libraries/src/User/User.php</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Updater/UpdateAdapter.php</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Updater/Update.php</exclude-pattern>
-		<exclude-pattern type="relative">libraries/cms/less/formatter/joomla.php</exclude-pattern>
 		<exclude-pattern type="relative">administrator/modules/mod_menu/menu.php</exclude-pattern>
 		<exclude-pattern type="relative">administrator/modules/mod_quickicon/helper.php</exclude-pattern>
 	</rule>
@@ -308,7 +274,7 @@
 		<exclude-pattern type="relative">templates/*</exclude-pattern>
 		<exclude-pattern type="relative">layouts/*</exclude-pattern>
 	</rule>
-	
+
 	<!-- Include some additional sniffs from the Zend standard -->
 	<rule ref="Zend.Files.ClosingTag">
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
@@ -316,7 +282,7 @@
 		<exclude-pattern type="relative">templates/*</exclude-pattern>
 		<exclude-pattern type="relative">layouts/*</exclude-pattern>
 	</rule>
-	
+
 	<!-- CMS specific sniff exclusions from the Joomla standard -->
 	<rule ref="Joomla.Commenting.FileComment">
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
@@ -329,7 +295,6 @@
 		<exclude-pattern type="relative">modules/*</exclude-pattern>
 		<exclude-pattern type="relative">plugins/*</exclude-pattern>
 		<exclude-pattern type="relative">*/tests/*</exclude-pattern>
-		<exclude-pattern type="relative">libraries/legacy/*</exclude-pattern>
 		<exclude-pattern type="relative">libraries/cms/html/*</exclude-pattern>
 		<exclude-pattern type="relative">installation/model/*</exclude-pattern>
 		<exclude-pattern type="relative">installation/application/*</exclude-pattern>
@@ -345,7 +310,6 @@
 		<exclude-pattern type="relative">libraries/src/Toolbar/Toolbar.php</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Toolbar/Button/SeparatorButton.php</exclude-pattern>
 		<exclude-pattern type="relative">libraries/loader.php</exclude-pattern>
-		<exclude-pattern type="relative">libraries/legacy/error/error.php</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Component/Router/*</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Document/*</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Editor/Editor.php</exclude-pattern>
