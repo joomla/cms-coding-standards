@@ -8,7 +8,6 @@
 	<arg value="sp"/>
 	<arg name="colors" />
 	<config name="php_version" value="70200"/>
-	<config name="installed_paths" value="../../joomla/cms-coding-standards/lib,../../joomla/coding-standards"/>
 
 	<!-- Exclude folders not containing production code -->
 	<exclude-pattern type="relative">^build/*</exclude-pattern>
@@ -128,18 +127,6 @@
 		<exclude-pattern type="relative">*/tmpl/*</exclude-pattern>
 		<exclude-pattern type="relative">templates/*</exclude-pattern>
 		<exclude-pattern type="relative">layouts/*</exclude-pattern>
-		<exclude-pattern type="relative">libraries/src/Helper/ContentHistoryHelper.php</exclude-pattern>
-		<exclude-pattern type="relative">libraries/src/Helper/TagsHelper.php</exclude-pattern>
-		<exclude-pattern type="relative">libraries/src/Table/Nested.php</exclude-pattern>
-		<exclude-pattern type="relative">administrator/components/com_modules/models/module.php</exclude-pattern>
-		<exclude-pattern type="relative">modules/mod_tags_popular/helper.php</exclude-pattern>
-		<exclude-pattern type="relative">plugins/system/debug/debug.php</exclude-pattern>
-		<exclude-pattern type="relative">components/com_content/models/articles.php</exclude-pattern>
-		<exclude-pattern type="relative">administrator/modules/mod_menus/models/menus.php</exclude-pattern>
-		<exclude-pattern type="relative">administrator/components/com_joomlaupdate/models/default.php</exclude-pattern>
-		<exclude-pattern type="relative">administrator/components/com_menus/models/menus.php</exclude-pattern>
-		<exclude-pattern type="relative">administrator/components/com_menus/models/items.php</exclude-pattern>
-		<exclude-pattern type="relative">administrator/components/com_associations/models/associations.php</exclude-pattern>
 	</rule>
 	<rule ref="Generic.WhiteSpace.ScopeIndent">
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
@@ -171,14 +158,7 @@
 		<exclude-pattern type="relative">templates/*</exclude-pattern>
 		<exclude-pattern type="relative">layouts/*</exclude-pattern>
 	</rule>
-	<rule ref="PEAR.Functions.ValidDefaultValue">
-		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
-		<exclude-pattern type="relative">administrator/components/com_contact/helpers/html/contact.php</exclude-pattern>
-		<exclude-pattern type="relative">administrator/components/com_content/helpers/html/contentadministrator.php</exclude-pattern>
-		<exclude-pattern type="relative">libraries/cms/component/router/stubs/ComContentRouter.php</exclude-pattern>
-		<exclude-pattern type="relative">libraries/cms/pagination/JPaginationObjectTest.php</exclude-pattern>
-		<exclude-pattern type="relative">modules/mod_articles_category/helper.php</exclude-pattern>
-	</rule>
+	<rule ref="PEAR.Functions.ValidDefaultValue" />
 
 	<!-- Include some additional sniffs from the Squiz standard -->
 	<rule ref="Squiz.Commenting.BlockComment">
@@ -338,7 +318,7 @@
 		<exclude-pattern type="relative">templates/*</exclude-pattern>
 		<exclude-pattern type="relative">layouts/*</exclude-pattern>
 	</rule>
-	<rule ref="Joomla.Commenting.ClassComment"></rule>
+	<rule ref="Joomla.Commenting.ClassComment" />
 	<rule ref="Joomla.ControlStructures.ControlSignature">
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
 		<exclude-pattern type="relative">*/tmpl/*</exclude-pattern>
