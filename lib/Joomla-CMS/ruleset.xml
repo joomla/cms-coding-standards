@@ -35,9 +35,6 @@
 	<exclude-pattern type="relative">installation/template/index.php</exclude-pattern>
 	<exclude-pattern type="relative">installation/template/error.php</exclude-pattern>
 
-	<!-- Exclude tests completely for now -->
-	<exclude-pattern type="relative">tests/*</exclude-pattern>
-
 	<!-- Exclude the RoboFile.php -->
 	<exclude-pattern type="relative">RoboFile.php</exclude-pattern>
 
@@ -260,19 +257,13 @@
 		<exclude-pattern type="relative">templates/*</exclude-pattern>
 		<exclude-pattern type="relative">layouts/*</exclude-pattern>
 	</rule>
-
-	<!-- CMS specific sniff exclusions from the Joomla standard -->
-	<rule ref="Joomla.Commenting.FileComment">
-		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
-		<exclude-pattern type="relative">tests/*</exclude-pattern>
-	</rule>
+	<rule ref="Joomla.Commenting.FileComment"></rule>
 	<rule ref="Joomla.Commenting.FunctionComment">
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
 		<exclude-pattern type="relative">templates/*</exclude-pattern>
 		<exclude-pattern type="relative">layouts/*</exclude-pattern>
 		<exclude-pattern type="relative">modules/*</exclude-pattern>
 		<exclude-pattern type="relative">plugins/*</exclude-pattern>
-		<exclude-pattern type="relative">*/tests/*</exclude-pattern>
 		<exclude-pattern type="relative">libraries/cms/html/*</exclude-pattern>
 		<exclude-pattern type="relative">installation/model/*</exclude-pattern>
 		<exclude-pattern type="relative">installation/application/*</exclude-pattern>
