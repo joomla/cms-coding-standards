@@ -177,8 +177,6 @@
 		<exclude-pattern type="relative">components/com_newsfeeds/helpers/*</exclude-pattern>
 		<exclude-pattern type="relative">components/com_redirect/helpers/*</exclude-pattern>
 		<exclude-pattern type="relative">components/com_redirect/views/*</exclude-pattern>
-		<exclude-pattern type="relative">libraries/src/Form/Field/MediaField.php</exclude-pattern>
-		<exclude-pattern type="relative">libraries/src/MVC/View/CategoryView.php</exclude-pattern>
 		<exclude-pattern type="relative">administrator/components/com_plugins/*</exclude-pattern>
 		<exclude-pattern type="relative">administrator/components/com_installer/models/database.php</exclude-pattern>
 		<exclude-pattern type="relative">administrator/components/com_content/helpers/content.php</exclude-pattern>
@@ -219,9 +217,6 @@
 		<exclude-pattern type="relative">components/com_newsfeeds/router.php</exclude-pattern>
 		<exclude-pattern type="relative">components/com_content/models/catagory.php</exclude-pattern>
 		<exclude-pattern type="relative">components/com_content/models/catagories.php</exclude-pattern>
-		<exclude-pattern type="relative">libraries/src/User/User.php</exclude-pattern>
-		<exclude-pattern type="relative">libraries/src/Updater/UpdateAdapter.php</exclude-pattern>
-		<exclude-pattern type="relative">libraries/src/Updater/Update.php</exclude-pattern>
 		<exclude-pattern type="relative">administrator/modules/mod_menu/menu.php</exclude-pattern>
 		<exclude-pattern type="relative">administrator/modules/mod_quickicon/helper.php</exclude-pattern>
 	</rule>
