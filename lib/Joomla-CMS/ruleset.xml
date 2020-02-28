@@ -57,7 +57,6 @@
 		<exclude-pattern type="relative">plugins/system/*</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Access/Access.php</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Application/*</exclude-pattern>
-		<exclude-pattern type="relative">libraries/src/Categories/Categories.php</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Renderer/*</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Client/FtpClient.php</exclude-pattern>
 		<exclude-pattern type="relative">libraries/src/Component/*</exclude-pattern>
