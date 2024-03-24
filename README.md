@@ -1,3 +1,5 @@
+The Joomla project has migrated all its code to use PSR-12 codestyle instead of a custom version. If you are using this codestyle, you should also migrate to PSR-12. This codestyle will not get any further maintenance and is therefore archived since March 2024.
+
 # cms-coding-standards
 Extended Joomla Coding Standards definition for use in the Joomla CMS environment
 
